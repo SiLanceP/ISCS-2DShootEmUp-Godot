@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://djagqasuwwewb" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://66omatmnu4fj" path="res://scenes/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cblsgcj0r6mxw" path="res://scenes/map.tscn" id="2_sugp2"]
 
 [node name="Main" type="Node2D" unique_id=1915031727]
 script = ExtResource("1_o5qli")
+
+[node name="Map" parent="." unique_id=1324985299 instance=ExtResource("2_sugp2")]
 
 [node name="Player" parent="." unique_id=858924373 instance=ExtResource("2_0wfyh")]
 position = Vector2(304, 216)
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=1937915677]
-position = Vector2(200, 400)
+position = Vector2(256, 640)

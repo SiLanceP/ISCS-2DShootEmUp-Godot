@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bn0dtq1xlsngs" path="res://assets/Foozle_2DS0011_Void_MainShip/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_qhqgy"]
 
 [node name="Player" type="CharacterBody2D" unique_id=858924373 groups=["player"]]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
 motion_mode = 1
 script = ExtResource("1_g2els")
 
