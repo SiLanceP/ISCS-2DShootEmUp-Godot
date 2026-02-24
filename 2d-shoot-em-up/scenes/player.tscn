@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://66omatmnu4fj"]
+
+[ext_resource type="Script" uid="uid://dtldfnnq7f3ib" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bn0dtq1xlsngs" path="res://assets/Foozle_2DS0011_Void_MainShip/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_qhqgy"]
+
+[node name="Player" type="CharacterBody2D" unique_id=858924373 groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1124178589]
+texture_filter = 1
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=931656036]
+polygon = PackedVector2Array(-15, 11, -15, 5, -14, 5, -5, -4, -5, -7, -4, -7, 0, -13, 3, -7, 4, -7, 5, -7, 5, -4, 14, 5, 15, 5, 15, 11, 13, 11, 13, 10, 5, 7, 3, 7, 3, 13, 1, 13, 1, 12, -1, 12, -1, 13, -3, 13, -3, 7, -5, 7, -13, 10, -13, 11)

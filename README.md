@@ -14,3 +14,6 @@ Void Main ship and fleet pack: https://foozlecc.itch.io/void-main-ship & https:/
 
 Shoot em up asset pack: https://timberlate007.itch.io/shootem-up
 
+Tutorials:
+
+Playlist: https://www.youtube.com/watch?v=enfG6BCTr8o&list=PLhXFaKLHQJdWH6NPEJK2tALylKKvzlY52&index=7
