@@ -19,16 +19,22 @@ position = Vector2(256, 640)
 [node name="Fighter Enemy" type="Node2D" parent="." unique_id=523657700]
 
 [node name="Fighter" parent="Fighter Enemy" unique_id=1970761870 instance=ExtResource("4_jyhfs")]
-position = Vector2(72, 40)
+position = Vector2(52, -145)
 
 [node name="Fighter2" parent="Fighter Enemy" unique_id=33667099 instance=ExtResource("4_jyhfs")]
-position = Vector2(336, -48)
+position = Vector2(452, -350)
 
 [node name="Fighter3" parent="Fighter Enemy" unique_id=2085325213 instance=ExtResource("4_jyhfs")]
-position = Vector2(416, 64)
+position = Vector2(474, -90)
 
 [node name="Fighter4" parent="Fighter Enemy" unique_id=2122504742 instance=ExtResource("4_jyhfs")]
-position = Vector2(160, 120)
+position = Vector2(310, -659)
 
 [node name="Fighter5" parent="Fighter Enemy" unique_id=1481739622 instance=ExtResource("4_jyhfs")]
-position = Vector2(312, 192)
+position = Vector2(50, -509)
+
+[node name="Timer" type="Timer" parent="." unique_id=1383595798]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_enemy_timer_timeout"]

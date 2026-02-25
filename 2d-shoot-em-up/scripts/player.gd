@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var fire_rate = 0.2
 @export var health: int = 5 
 var fire_timer: float = 0.0
+var is_dying: bool = false
 
 @onready var anim = $AnimatedSprite2D 
 const PROJECTILE = preload("uid://d337ap0wrf3wp")
@@ -52,18 +53,24 @@ func _on_area_entered(area: Area2D) -> void:
 				anim.play("Normal")
 
 func take_damage(amount: int):
+	if is_dying: return
+	
 	health -= amount
 	print("Player Health: ", health)
+	
 	if health <= 0:
+		is_dying = true
 		die()
 	else:
 		anim.play("Hit")
 		await get_tree().create_timer(0.1).timeout
-
-		anim.play("Normal")
+		if !is_dying:
+			anim.play("Normal")
 
 func die():
-	set_process(false) 
+	set_process(false)
+	$CollisionPolygon2D.set_deferred("disabled", true) 
 	anim.play("Death")
+	print("Playing Death Animation...")
 	await anim.animation_finished
 	get_tree().reload_current_scene()

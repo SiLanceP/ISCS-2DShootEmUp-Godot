@@ -125,5 +125,9 @@ position = Vector2(-9.536743e-07, 5.9604645e-08)
 scale = Vector2(1.2, 1.1000001)
 polygon = PackedVector2Array(-10, -8.181818, -10, 5.4545455, -8.333333, 7.2727275, -7.5, 7.2727275, -4.166666, 10, 4.166668, 10, 7.500002, 7.2727275, 8.333335, 7.2727275, 10.000002, 5.4545455, 10.000002, -8.181818, 9.166669, -9.090909, 8.333335, -9.090909, 2.500001, -9.090909, 0.8333342, -10, -0.83333266, -10, -2.4999995, -9.090909, -8.333333, -9.090909, -9.166667, -9.090909)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=872066760]
+position = Vector2(-2, 1.3333334)
+rect = Rect2(-10, -12.666667, 24, 22.666668)
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

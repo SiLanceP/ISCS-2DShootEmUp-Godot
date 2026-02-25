@@ -1,4 +1,5 @@
 extends Area2D
+const ENEMY_LASER = preload("res://scenes/f-projectile.tscn")
 
 var health: int = 3
 var speed: float = 100.0
@@ -6,6 +7,9 @@ var velocity = Vector2(0,1)
 var random_timer: float = 0.0
 
 @onready var anim = $AnimatedSprite2D
+@onready var visible_notifier = $VisibleOnScreenNotifier2D
+@export var fire_rate: float = 1.5
+var shoot_timer: float = 0.0
 
 func _ready() -> void:
 	velocity.x = randf_range(-1.0, 1.0)
@@ -25,6 +29,17 @@ func _process(delta: float) -> void:
 
 	if position.y > screen_size.y + 50:
 		queue_free()
+		
+	shoot_timer += delta
+	if shoot_timer >= fire_rate:
+		shoot()
+		shoot_timer = 0.0
+
+func shoot():
+	if health > 0 and visible_notifier.is_on_screen():
+		var laser = ENEMY_LASER.instantiate()
+		laser.global_position = global_position
+		add_sibling(laser)
 
 func _on_area_entered(area: Area2D) -> void:
 		if health > 0:
