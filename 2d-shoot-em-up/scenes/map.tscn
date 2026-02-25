@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://cblsgcj0r6mxw"]
 
 [ext_resource type="Texture2D" uid="uid://doqcxd58giuhv" path="res://assets/SBS - Seamless Space Backgrounds - Small 512x512/Small 512x512/Blue Nebula/Blue_Nebula_08-512x512.png" id="1_4xfga"]
+[ext_resource type="Script" uid="uid://ctqfou0ay5jj5" path="res://scripts/map.gd" id="1_paxxb"]
 
 [node name="Map" type="Node2D" unique_id=1324985299]
+script = ExtResource("1_paxxb")
 
 [node name="Background" type="TextureRect" parent="." unique_id=57209460]
 texture_filter = 1
+offset_top = -11264.0
 offset_right = 512.0
 offset_bottom = 768.0
 texture = ExtResource("1_4xfga")
 expand_mode = 1
+stretch_mode = 1

@@ -17,3 +17,5 @@ Shoot em up asset pack: https://timberlate007.itch.io/shootem-up
 Tutorials:
 
 Playlist: https://www.youtube.com/watch?v=enfG6BCTr8o&list=PLhXFaKLHQJdWH6NPEJK2tALylKKvzlY52&index=7
+
+Playlist 2: https://www.youtube.com/watch?v=WoFtkCX_lxw&list=PL8zFvrwKVF4gTA7sKzpDDao1hF-YdCKTM&index=3
