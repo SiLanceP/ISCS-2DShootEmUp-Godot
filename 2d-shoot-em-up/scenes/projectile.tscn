@@ -9,6 +9,8 @@ size = Vector2(6, 12)
 load_path = "res://.godot/imported/Bullets-0001.png-1a159c4f2fe0d592a85c173d5790038c.ctex"
 
 [node name="laser" type="Area2D" unique_id=940577846 groups=["projectile"]]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_c8fcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1627559488]
@@ -32,3 +34,5 @@ position = Vector2(5, 0)
 texture = SubResource("CompressedTexture2D_c8fcr")
 region_enabled = true
 region_rect = Rect2(118, 18, 4, 12)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

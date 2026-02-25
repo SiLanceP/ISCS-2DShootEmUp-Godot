@@ -1,17 +1,104 @@
 [gd_scene format=3 uid="uid://66omatmnu4fj"]
 
 [ext_resource type="Script" uid="uid://dtldfnnq7f3ib" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bn0dtq1xlsngs" path="res://assets/Foozle_2DS0011_Void_MainShip/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://ygbm3xitqqga" path="res://assets/Shoot`em Up/SpaceShips_Player-0001.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dqgf3og7ladfr" path="res://assets/Shoot`em Up/Explosion-0001.png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(64, 240, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(128, 240, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(192, 240, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(256, 240, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(320, 240, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_g2els")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 15, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 50.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=858924373 groups=["player"]]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
+collision_mask = 10
 motion_mode = 1
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1124178589]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=925100518]
 texture_filter = 1
-texture = ExtResource("2_qhqgy")
+position = Vector2(-0.6666665, 8.999999)
+scale = Vector2(0.8333334, 0.8020833)
+sprite_frames = SubResource("SpriteFrames_dqkch")
+animation = &"Hit"
+autoplay = "Normal"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=931656036]
-polygon = PackedVector2Array(-15, 11, -15, 5, -14, 5, -5, -4, -5, -7, -4, -7, 0, -13, 3, -7, 4, -7, 5, -7, 5, -4, 14, 5, 15, 5, 15, 11, 13, 11, 13, 10, 5, 7, 3, 7, 3, 13, 1, 13, 1, 12, -1, 12, -1, 13, -3, 13, -3, 7, -5, 7, -13, 10, -13, 11)
+polygon = PackedVector2Array(-15, 11, -15, 5, -14, 5, -5, -4, -5, -7, -4, -7, 0, -13, 3, -7, 4, -7, 5, -7, 5, -4, 14, 5, 15, 5, 15, 11, 13, 11, 13, 10, 5, 7, 3, 7, 6, 22, 1.3333334, 22, 1.3333334, 20, -1.3333334, 20, -1.3333334, 22, -6.666667, 22, -3, 7, -5, 7, -13, 10, -13, 11)
