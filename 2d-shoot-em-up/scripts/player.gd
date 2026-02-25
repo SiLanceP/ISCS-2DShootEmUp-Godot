@@ -13,6 +13,12 @@ func _process(delta: float) -> void:
 		velocity = Vector2.ZERO
 	move_and_slide()
 	
+	# Preventing going off screen
+	var screen_size = get_viewport_rect().size
+	var padding = 20
+	global_position.x = clamp(global_position.x, padding, screen_size.x - padding)
+	global_position.y = clamp(global_position.y, padding, screen_size.y - padding)
+	
 	if fire_timer > 0.0:
 		fire_timer -= delta
 	if Input.is_action_pressed("shoot") and fire_timer <= 0.0:
