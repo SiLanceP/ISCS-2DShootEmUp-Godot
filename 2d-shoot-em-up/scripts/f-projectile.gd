@@ -1,8 +1,9 @@
 extends Area2D
 var speed = 300
+var direction = Vector2.DOWN  # Default to downward
 
 func _process(delta: float) -> void:
-	translate(Vector2.DOWN * speed * delta)
+	translate(direction * speed * delta)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):

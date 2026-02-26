@@ -4,11 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://66omatmnu4fj" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cblsgcj0r6mxw" path="res://scenes/map.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ddhy71n5d0dit" path="res://scenes/fighter.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://healthbar123" path="res://scenes/health_bar.tscn" id="5_hb"]
 
 [node name="Main" type="Node2D" unique_id=1915031727]
 script = ExtResource("1_o5qli")
 
 [node name="Map" parent="." unique_id=1324985299 instance=ExtResource("2_sugp2")]
+
+[node name="HealthBarUI" parent="." instance=ExtResource("5_hb")]
 
 [node name="Player" parent="." unique_id=858924373 instance=ExtResource("2_0wfyh")]
 position = Vector2(448, 704)
@@ -34,7 +37,12 @@ position = Vector2(310, -659)
 position = Vector2(50, -509)
 
 [node name="Timer" type="Timer" parent="." unique_id=1383595798]
-wait_time = 2.0
+wait_time = 3.0
+autostart = true
+
+[node name="ScoutTimer" type="Timer" parent="." unique_id=1383595799]
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="ScoutTimer" to="." method="_on_scout_timer_timeout"]

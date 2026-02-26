@@ -39,6 +39,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 	if health > 0:
 		health -= 1
+		update_health_bar()
 		if health <= 0:
 			speed = 0
 			set_deferred("monitoring", false)
@@ -56,6 +57,7 @@ func take_damage(amount: int):
 	if is_dying: return
 	
 	health -= amount
+	update_health_bar()
 	print("Player Health: ", health)
 	
 	if health <= 0:
@@ -66,6 +68,11 @@ func take_damage(amount: int):
 		await get_tree().create_timer(0.1).timeout
 		if !is_dying:
 			anim.play("Normal")
+
+func update_health_bar():
+	var health_bar = get_tree().get_first_node_in_group("health_bar")
+	if health_bar:
+		health_bar.update_health(health)
 
 func die():
 	set_process(false)
