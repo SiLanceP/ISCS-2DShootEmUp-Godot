@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://b8jqwr5f3x6nm"]
+[gd_scene format=3 uid="uid://pyp8sdm7fc5y"]
 
-[ext_resource type="Texture2D" uid="uid://cwtklp0nw6x6l" path="res://assets/Foozle_2DS0012_Void_FleetPack_1/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Destruction/PNGs/Kla'ed - Scout - Destruction.png" id="1_dest"]
-[ext_resource type="Script" uid="uid://csc3y8vqx2jln" path="res://scripts/scout.gd" id="1_scout"]
-[ext_resource type="Texture2D" uid="uid://cxqjdhm0t85w1" path="res://assets/Foozle_2DS0012_Void_FleetPack_1/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Base/PNGs/Kla'ed - Scout - Base.png" id="2_base"]
+[ext_resource type="Texture2D" uid="uid://cwtklp0nw6x6l" path="res://assets/Foozle_2DS0012_Void_FleetPack_1/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Destruction/PNGs/Kla'ed - Fighter - Destruction.png" id="1_dest"]
+[ext_resource type="Script" uid="uid://ba24xnfvsw1mt" path="res://scripts/scout.gd" id="1_scout"]
+[ext_resource type="Texture2D" uid="uid://cogj8i2syxhwx" path="res://assets/Foozle_2DS0012_Void_FleetPack_1/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Base/PNGs/Kla'ed - Scout - Base.png" id="2_base"]
+[ext_resource type="Texture2D" uid="uid://dqgf3og7ladfr" path="res://assets/Shoot`em Up/Explosion-0001.png" id="4_ksba2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dest1"]
 atlas = ExtResource("1_dest")
@@ -36,17 +37,13 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("1_dest")
 region = Rect2(448, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hit1"]
-atlas = ExtResource("1_dest")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hit2"]
-atlas = ExtResource("1_dest")
-region = Rect2(64, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_normal"]
 atlas = ExtResource("2_base")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("4_ksba2")
+region = Rect2(64, 240, 64, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_scout"]
 animations = [{
@@ -81,10 +78,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hit1")
+"texture": SubResource("AtlasTexture_normal")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hit2")
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_normal")
 }],
 "loop": false,
 "name": &"Hit",
@@ -108,7 +108,7 @@ script = ExtResource("1_scout")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1792475269]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_scout")
-animation = &"Normal"
+animation = &"Hit"
 autoplay = "Normal"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=207442339]
